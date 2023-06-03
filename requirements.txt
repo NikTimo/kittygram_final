@@ -49,3 +49,4 @@ typing_extensions==4.6.3
 uritemplate==4.1.1
 urllib3==2.0.2
 webcolors==1.11.1
+# в корне создана жесткая ссылка для прохождения тестов
