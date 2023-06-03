@@ -12,25 +12,25 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend/
+    image: niktimo/kittygram_backend
     env_file: .env
     depends_on:
       - db
     volumes:
       - static:/backend_static
-      - media:/var/www/kittygram/media/
+      - media:/app/media
   frontend:
     env_file: .env
-    build: ./frontend/
+    image: niktimo/kittygram_frontend
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
-    build: ./nginx/
+    image: niktimo/kittygram_nginx
     ports:
       - 9000:80
     volumes:
       - static:/static
-      - media:/var/www/kittygram/media/
+      - media:/media
     depends_on:
       - backend
