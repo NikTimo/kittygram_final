@@ -18,7 +18,7 @@ services:
       - db
     volumes:
       - static:/backend_static
-      - media:/var/www/kittygram/media/
+      - media:/app/media
   frontend:
     env_file: .env
     build: ./frontend/
@@ -31,6 +31,6 @@ services:
       - 9000:80
     volumes:
       - static:/static
-      - media:/var/www/kittygram/media/
+      - media:/media
     depends_on:
       - backend
