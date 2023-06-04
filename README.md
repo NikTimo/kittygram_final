@@ -11,4 +11,5 @@ Kittygram - приложение для анкетирования и обмен
 - WSGI-server: gunicorn,
 - Web-server: NginX.
 ## Запуск проекта:
+Из головной
 ## Автор: NT
